@@ -1,13 +1,17 @@
 version: 0.2
+env:
+  parameter-store:
+    ACCOUNT_ID: /myapp/aws-credentials/account_id
+    AWS_DEFAULT_REGION: /myapp/aws-credentials/region
+    REPOSITORY_URI: /myapp/aws-credentials/registry
+    IMAGE_TAG: latest 
+
 phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR....
       - aws --version
-      #- $(aws ecr get-login --region ap-south-1 --no-include-email)
-      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 358325425581.dkr.ecr.ap-south-1.amazonaws.com
-      - # Replace with this to your repository URI
-      - REPOSITORY_URI=358325425581.dkr.ecr.ap-south-1.amazonaws.com/spring-demo-ecr
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $REPOSITORY_URI
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
