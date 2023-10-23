@@ -3,8 +3,7 @@ env:
   parameter-store:
     ACCOUNT_ID: /myapp/aws-credentials/account_id
     AWS_DEFAULT_REGION: /myapp/aws-credentials/region
-    REPOSITORY_URI: /myapp/aws-credentials/registry
-    IMAGE_TAG: latest 
+    REPOSITORY_URI: /myapp/aws-credentials/registry 
 
 phases:
   pre_build:
