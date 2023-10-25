@@ -87,7 +87,7 @@ Now, let's walk through the straightforward steps to create and manage your own 
 - Optionally, configure encryption if you selected "SecureString".
 - Optionally, add tags to organize your parameters.
 - Click "Create parameter."
-- 
+
 Following these steps will empower you to effectively leverage AWS Systems Manager Parameter Store, ensuring that your configurations remain secure and accessible whenever you need them."
 
 For any queries related to project reach me on akshaymanoj.dev@gmail.com.
