@@ -70,9 +70,26 @@ Real-time notifications about deployment statuses are essential for monitoring a
 - Configured the CodePipeline to send SNS notifications on deployment status changes, ensuring that you are promptly informed of any updates or issues in the pipeline.
 
 This project provides a comprehensive example of setting up a robust CI/CD pipeline for a Spring Boot application on AWS. For a more detailed guide and visual walkthrough, refer to the video tutorial I have referred.
+Ref: https://youtu.be/ARGmrYFfv44?si=hjpY4dhr6KgiwY5i
 
-Feel free to clone this repository as a foundation for your own projects. Just make sure to update the AWS repository name and account ID to match your AWS environment. For any queries related to project reach me on akshaymanoj.dev@gmail.com.
+"Feel welcome to clone this repository as a solid foundation for kickstarting your own projects. However, remember to take a moment to tailor the AWS repository name and account ID to align seamlessly with your unique AWS environment.
 
+In this project, we've harnessed the power of AWS Systems Manager Parameter Store to securely manage our configuration data and safeguard our most sensitive secrets. This vault of information stands ready to be accessed by your applications, services, and AWS resources, providing a robust, flexible solution to your configuration needs.
 
-4. And your favourite code editor 
+Now, let's walk through the straightforward steps to create and manage your own configuration data and secrets in Parameter Store. By following this guide, you'll be able to harness the full potential of this powerful AWS service for your projects:
+
+- Go to "Parameter Store" in the Systems Manager console.
+- Click "Create parameter."
+- Provide a name for your parameter (e.g., /myapp/aws-credentials/account_id).
+- Choose a tier (Standard for sensitive data, encrypted with AWS KMS; Advanced for higher throughput and larger values).
+- Select a type (String, StringList, or SecureString) based on your needs. Use SecureString for sensitive data.
+- Enter the parameter value (e.g., AWS account ID) in the "Value" section.
+- Optionally, configure encryption if you selected "SecureString".
+- Optionally, add tags to organize your parameters.
+- Click "Create parameter."
+- 
+Following these steps will empower you to effectively leverage AWS Systems Manager Parameter Store, ensuring that your configurations remain secure and accessible whenever you need them."
+
+For any queries related to project reach me on akshaymanoj.dev@gmail.com.
+
 
