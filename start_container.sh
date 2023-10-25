@@ -9,7 +9,7 @@ REPOSITORY_URI=$(aws ssm get-parameter --name /myapp/aws-credentials/registry --
 aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $REPOSITORY_URI
 
 # Pull the image
-docker pull $REPOSITORY_URI/my-image:latest
+docker pull $REPOSITORY_URI:latest
 
 # Run your container using the pulled image
-docker run -d $REPOSITORY_URI/my-image:latest
+docker run -d $REPOSITORY_URI:latest
